@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "status": "ready",
+  "verification": "mock-only",
+  "releaseEligible": true,
+  "maintainer": "jannikco",
+  "license": "MIT",
+  "sourceRevision": "38555c46c92642d7fcd652f1d41bfe5d6b1fba72daa694a5e9a7b0779123314e",
+  "evidence": [
+    "Actual tools/call and direct-provider request contract tests"
+  ],
+  "provenance": [
+    "https://docs.apify.com/api/openapi.json"
+  ],
+  "id": "apify-mcp",
+  "kind": "provider-connector",
+  "product": "pipmcp",
+  "title": "Apify MCP server",
+  "description": "Review account identity and existing Actors before deciding which existing automation to inspect.",
+  "operationIds": [
+    "get_current_user",
+    "list_actors"
+  ],
+  "appSlug": "apify",
+  "appName": "Apify",
+  "providerDocs": "https://docs.apify.com/api/openapi.json",
+  "providerWebsite": "https://apify.com/",
+  "authentication": {
+    "type": "bearer",
+    "requiredCredentialFields": [
+      "token"
+    ],
+    "settings": {},
+    "requiredHeaderNames": [],
+    "helpUrl": "https://docs.apify.com/platform/integrations/api",
+    "tenantRequired": false,
+    "accountParameterNames": []
+  },
+  "attributionSlug": "github-apify-mcp",
+  "artifactType": "connector",
+  "qualityVersion": 2,
+  "connectorId": "apify",
+  "connector": {
+    "id": "apify",
+    "name": "Apify",
+    "version": "0.2.0",
+    "baseUrl": "https://api.apify.com/v2",
+    "auth": {
+      "type": "bearer",
+      "env": "APIFY_TOKEN"
+    },
+    "tools": [
+      {
+        "name": "get_current_user",
+        "description": "Read your Apify account identity.",
+        "method": "GET",
+        "path": "/users/me",
+        "readOnly": true,
+        "inputSchema": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        },
+        "bindings": {
+          "path": [],
+          "query": {},
+          "body": {}
+        },
+        "sampleArguments": {},
+        "provenance": [
+          "https://docs.apify.com/api/v2/users-me-get"
+        ]
+      },
+      {
+        "name": "list_actors",
+        "description": "List Actors owned by your account; does not run them or incur Actor execution charges.",
+        "method": "GET",
+        "path": "/actors",
+        "readOnly": true,
+        "inputSchema": {
+          "type": "object",
+          "properties": {
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000
+            },
+            "offset": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        },
+        "bindings": {
+          "path": [],
+          "query": {
+            "limit": "limit",
+            "offset": "offset"
+          },
+          "body": {}
+        },
+        "sampleArguments": {},
+        "provenance": [
+          "https://docs.apify.com/api/v2/actors-get"
+        ]
+      }
+    ],
+    "workflow": {
+      "name": "Actor inventory",
+      "description": "Review account identity and existing Actors before deciding which existing automation to inspect.",
+      "steps": [
+        "get_current_user",
+        "list_actors"
+      ]
+    },
+    "provenance": [
+      "https://docs.apify.com/api/openapi.json"
+    ],
+    "verification": "mock-only",
+    "providerLiveValidation": "not-run",
+    "capabilityEvidence": {
+      "local": {
+        "level": "Tested",
+        "operations": [
+          {
+            "name": "get_current_user",
+            "level": "Tested",
+            "evidenceRefs": [
+              "Provider request/stdio contract tests"
+            ],
+            "method": "contract-fixture"
+          },
+          {
+            "name": "list_actors",
+            "level": "Tested",
+            "evidenceRefs": [
+              "Provider request/stdio contract tests"
+            ],
+            "method": "contract-fixture"
+          }
+        ],
+        "evidenceRefs": [
+          "Provider request/stdio contract tests"
+        ],
+        "mode": "local"
+      },
+      "managed": {
+        "level": "Documented",
+        "operations": [
+          {
+            "name": "get_current_user",
+            "level": "Documented",
+            "evidenceRefs": [],
+            "method": "documentation"
+          },
+          {
+            "name": "list_actors",
+            "level": "Documented",
+            "evidenceRefs": [],
+            "method": "documentation"
+          }
+        ],
+        "evidenceRefs": [],
+        "mode": "managed"
+      }
+    },
+    "repoId": "apify-mcp",
+    "appSlug": "apify",
+    "product": "pipmcp",
+    "artifactType": "connector",
+    "sourceRevision": "38555c46c92642d7fcd652f1d41bfe5d6b1fba72daa694a5e9a7b0779123314e",
+    "authentication": {
+      "type": "bearer",
+      "requiredCredentialFields": [
+        "token"
+      ],
+      "settings": {},
+      "requiredHeaderNames": [],
+      "helpUrl": "https://docs.apify.com/platform/integrations/api",
+      "tenantRequired": false,
+      "accountParameterNames": []
+    },
+    "managedAvailability": {
+      "status": "listed",
+      "checkedAt": "2026-11-08T12:29:10.433747+00:00"
+    }
+  },
+  "capabilityEvidence": {
+    "local": {
+      "level": "Tested",
+      "operations": [
+        {
+          "name": "get_current_user",
+          "level": "Tested",
+          "evidenceRefs": [
+            "Provider request/stdio contract tests"
+          ],
+          "method": "contract-fixture"
+        },
+        {
+          "name": "list_actors",
+          "level": "Tested",
+          "evidenceRefs": [
+            "Provider request/stdio contract tests"
+          ],
+          "method": "contract-fixture"
+        }
+      ],
+      "evidenceRefs": [
+        "Provider request/stdio contract tests"
+      ],
+      "mode": "local"
+    },
+    "managed": {
+      "level": "Documented",
+      "operations": [
+        {
+          "name": "get_current_user",
+          "level": "Documented",
+          "evidenceRefs": [],
+          "method": "documentation"
+        },
+        {
+          "name": "list_actors",
+          "level": "Documented",
+          "evidenceRefs": [],
+          "method": "documentation"
+        }
+      ],
+      "evidenceRefs": [],
+      "mode": "managed"
+    }
+  },
+  "utility": {
+    "problem": "Review account identity and existing Actors before deciding which existing automation to inspect.",
+    "output": "Actual provider API results through local MCP tools"
+  },
+  "factory": "leadadapter-pipmcp",
+  "generatorVersion": 2
+}

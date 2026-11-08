@@ -1,0 +1,21 @@
+{
+  "name": "apify-mcp",
+  "version": "0.2.0",
+  "description": "Review account identity and existing Actors before deciding which existing automation to inspect.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "apify-mcp": "server.mjs"
+  },
+  "scripts": {
+    "start": "node example.mjs",
+    "server": "node server.mjs",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.4.0"
+  }
+}
