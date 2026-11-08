@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "version": "1.0.0",
+  "product": "pipmcp",
+  "credential": "PIPMCP_API_KEY",
+  "skills": [
+    {
+      "name": "pipmcp-apify",
+      "description": "Connect AI agents to Apify using one PipMCP API key and actual hosted tool discovery."
+    }
+  ],
+  "files": {
+    "skills/pipmcp-apify/SKILL.md": "c638eec9d8e9c57e7a5d8bc191073f23c0a3d2a84d3e7a1066b9afd2e000a72b"
+  }
+}
